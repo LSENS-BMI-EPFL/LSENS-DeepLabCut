@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5ff68244-167b-4007-b689-fd89e317474e" name="izar" url="http://izar.epfl.ch">
+        <fileTransfer rootFolder="/home/bechvila/LSENS-DeepLabCut" accessType="SFTP" host="izar.epfl.ch" port="22" sshConfigId="5efd14c5-bf95-4153-96f6-a5f86a84f6d0" sshConfig="bechvila@izar.epfl.ch:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
