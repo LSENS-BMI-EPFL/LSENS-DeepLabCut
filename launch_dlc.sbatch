@@ -1,6 +1,8 @@
+#!/bin/bash -l
+#SBATCH --job-name=RD_dlc
+#SBATCH --nodes=1
 #SBATCH --time 3-0
 #SBATCH --gres=gpu:1
-#SBATCH --qos=serial
 #SBATCH --mail-type=END,FAIL
 #SBATCH --error=/home/%u/logs/%j.err
 #SBATCH --output=/home/%u/logs/%j.out

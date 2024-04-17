@@ -6,7 +6,7 @@ import shutil
 import deeplabcut as dlc
 
 def run_dlc_anly():
-
+	print(sys.argv)
 	config_path = sys.argv[1]
 	video_path = sys.argv[2]
 	dest_path = sys.argv[3]
@@ -26,6 +26,7 @@ def run_dlc_anly():
 	dlc.analyze_videos(config_path, [video_path], videotype="avi", save_as_csv=True, destfolder=dest_path)
 	end = timeit.default_timer()
 	print(f"DLC ran without issues in {round((end-start)/60, 2)} min")
+
 
 if __name__ == "__main__":
 	run_dlc_anly()
