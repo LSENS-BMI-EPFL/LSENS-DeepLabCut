@@ -1,0 +1,19 @@
+{
+    "config_path": "/scratch/izar/bechvila/context_dlc_sideview-PB-2024-02-21/config.yaml",
+    "videos_to_anly": [
+        "data/PB173/Recording/Video/PB173_20240220_113617/PB173_20240220_113617_sideview.avi",
+        "data/PB173/Recording/Video/PB173_20240222_103437/PB173_20240222_103437_sideview.avi",
+        "data/PB174/Recording/Video/PB174_20240220_130214/PB174_20240220_130214_sideview.avi",
+        "data/PB174/Recording/Video/PB174_20240222_120146/PB174_20240222_120146_sideview.avi",
+        "data/PB175/Recording/Video/PB175_20240220_141455/PB175_20240220_141455_sideview.avi",
+        "data/PB175/Recording/Video/PB175_20240222_133223/PB175_20240222_133223_sideview.avi"
+    ],
+    "server_dest_folder": [
+        "analysis/Pol_Bech/data/PB173/PB173_20240220_113617",
+        "analysis/Pol_Bech/data/PB173/PB173_20240222_103437",
+        "analysis/Pol_Bech/data/PB174/PB174_20240220_130214",
+        "analysis/Pol_Bech/data/PB174/PB174_20240222_120146",
+        "analysis/Pol_Bech/data/PB175/PB175_20240220_141455",
+        "analysis/Pol_Bech/data/PB175/PB175_20240222_133223"
+    ]
+}

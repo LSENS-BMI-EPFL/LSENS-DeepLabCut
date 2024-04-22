@@ -37,10 +37,10 @@ def make_json_for_dlc(experimenter, camera_view, sessions_to_anly: list):
 
 if __name__ == "__main__":
 
-    filter_by_date = True
-    mouse_id = ["RD040", "RD041"]
+    filter_by_date = False
+    # mouse_id = ["RD039", "RD040", "RD041", "RD042", "RD043", "RD044", "RD045"]
     date_to_anly = ["20240210", "20240212"]
-    # mouse_id = ['PB173', 'PB174', 'PB175']
+    mouse_id = ['PB173', 'PB174', 'PB175']
     # date_to_anly = ["20240220", "20240222"]
     if filter_by_date == True and date_to_anly is None:
         ValueError("Introduce a valid date or set filter to False")
@@ -56,6 +56,8 @@ if __name__ == "__main__":
         if filter_by_date:
             for date in date_to_anly:
                 sessions_to_anly += [folder for folder in mouse_folder if date in folder]
+        else:
+            sessions_to_anly += mouse_folder
 
 
     make_json_for_dlc(experimenter=experimenter,

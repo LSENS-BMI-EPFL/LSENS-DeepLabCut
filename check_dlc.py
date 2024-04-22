@@ -82,8 +82,11 @@ def check_dlc(vid, file):
 
         fig, ax = plt.subplots()
         for peak in peaks:
-            ax.plot(range(500),
-                    np.where(data['tongue']['likelihood'] > 0.6, data['tongue']['y'], np.nan)[(peak - 250):(peak + 250)])
+            trace = np.where(data['tongue']['likelihood'] > 0.6, data['tongue']['y'], np.nan)[(peak - 250):(peak + 250)]
+            if trace.shape[0] == 0:
+                trace = np.zeros(500)
+
+            ax.plot(range(500), trace)
 
         for ext in [".png", ".svg"]:
             fig.savefig(os.path.join(save_path, f"{part}_peak_aligned{ext}"), transparent=True)
@@ -92,7 +95,7 @@ def check_dlc(vid, file):
 
         if part == 'tongue':
             for peak in sample(peaks.tolist(), 10):
-                if (peak-250)<0 or (peak+250>data.shape[0]):
+                if (peak-250) < 0 or (peak+250) > data.shape[0]:
                     peak = sample(peaks.tolist(), 1)[0]
 
                 im_stack = []
@@ -128,7 +131,7 @@ def check_dlc(vid, file):
 if __name__ == "__main__":
 
     user = "Pol_Bech"
-    json_name = "sideview_dlc_config_PB.json"
+    json_name = "sideview_dlc_config_PB_old.json"
 
     server_path = "//sv-nas1.rcp.epfl.ch/Petersen-Lab"
 
@@ -137,11 +140,14 @@ if __name__ == "__main__":
         json_config = json.load(f)
 
     for vid_file, dest_folder in zip(json_config['videos_to_anly'], json_config['server_dest_folder']):
-        if "RD040_20240210_165203" in vid_file:
+        if vid_file.split("/")[-2] in ["RD040_20240210_165203", "RD041_20240210_152030"]:
             continue
 
         dest_file = os.path.join(server_path, dest_folder).replace("\\", "/")
         dlc_file = [file for file in os.listdir(dest_file) if ".csv" in file]
+        if len(dlc_file) == 0:
+            print(f"No dlc data for session {vid_file.split('/')[-2]}")
+            continue
 
         vid = os.path.join(server_path, vid_file).replace("\\", "/")
 
