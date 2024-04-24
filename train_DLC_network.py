@@ -22,3 +22,6 @@ def train_dlc_network():
                       displayiters=1000,
                       allow_growth=True)
     dlc.evaluate_network(config_path, plotting=True)
+
+if __name__ == "__main__":
+    train_dlc_network()

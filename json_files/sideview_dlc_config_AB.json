@@ -1,0 +1,9 @@
+{
+    "config_path": "/scratch/izar/bechvila/context_dlc_sideview-PB-2024-02-21/config.yaml",
+    "videos_to_anly": [
+        "analysis/Axel_Bisi/data/AB105/AB105_20240314_115206/Video/AB105_side 24-03-15 12-44-12-converted.mp4"
+    ],
+    "server_dest_folder": [
+        "analysis/Pol_Bech/data/AB105/AB105_20240314_115206"
+    ]
+}

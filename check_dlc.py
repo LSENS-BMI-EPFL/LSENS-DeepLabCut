@@ -12,7 +12,7 @@ from tqdm import tqdm
 from random import sample
 from scipy.signal import find_peaks
 
-def check_dlc(vid, file):
+def check_dlc(vid, file, parts_to_make_clips=['tongue']):
 
     save_path = file.replace(file.split("/")[-1], "dlc_check").replace("\\", "/")
     if not os.path.exists(os.path.join(save_path, 'temp')):
@@ -93,38 +93,41 @@ def check_dlc(vid, file):
 
         colors = cm.rainbow(np.linspace(0, 1, len(bodyparts)))
 
-        if part == 'tongue':
-            for peak in sample(peaks.tolist(), 10):
-                if (peak-250) < 0 or (peak+250) > data.shape[0]:
-                    peak = sample(peaks.tolist(), 1)[0]
+    for part in parts_to_make_clips:
+        peaks, _ = find_peaks(np.where(data[part]['likelihood'] > 0.6, data[part]['y'], 0), distance = 500)
 
-                im_stack = []
-                print("Generating videos of 10 tongue events")
-                video.set(cv2.CAP_PROP_POS_FRAMES, peak-250)
-                for i in tqdm(range(500)):
-                    ret, frame = video.read()
-                    fig, ax = plt.subplots()
-                    ax.imshow(frame, aspect='auto')
-                    for part, color in zip(bodyparts, colors):
-                        ax.scatter(data[part]['x'][peak - 250 + i], data[part]['y'][peak - 250 + i], s=50,
-                                   c=color.reshape(1,-1), label=part,
-                                   marker='o' if data[part]['likelihood'][peak - 250 + i] > 0.6 else 'x')
-                    ax.set_xlim(0, frame.shape[1])
-                    ax.set_ylim(frame.shape[0], 0)
-                    ax = plt.Axes(fig, [0., 0., 1., 1.])
-                    ax.set_axis_off()
-                    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
-                    fig.legend(fontsize="x-small")
-                    fig.savefig(os.path.join(save_path, 'temp', f'labelled_frame_{i}.jpeg'))
-                    fig.clear()
-                    im_stack += [np.asarray(
-                        Image.open(os.path.join(save_path, 'temp', f'labelled_frame_{i}.jpeg').replace("\\", "/")))]
-                    os.remove(os.path.join(save_path, 'temp', f'labelled_frame_{i}.jpeg').replace("\\", "/"))
+        for peak in sample(peaks.tolist(), 10):
+            if (peak-250) < 0 or (peak+250) > data.shape[0]:
+                peak = sample(peaks.tolist(), 1)[0]
 
-                print(f"Obtained labelled image stack, len before = {len(im_stack)}, len after stack {np.stack(im_stack, axis=0).shape}")
-                im_stack = np.stack(im_stack, axis=0)
-                print("Writting video, next")
-                tifffile.imwrite(os.path.join(save_path, f"{vid.split('/')[-2]}_tongue_video_frame_{peak-250}-{peak+250}.tif"), im_stack)
+            im_stack = []
+            print("Generating videos of 10 tongue events")
+            video.set(cv2.CAP_PROP_POS_FRAMES, peak-250)
+            for i in tqdm(range(500)):
+                ret, frame = video.read()
+                fig, ax = plt.subplots()
+                ax.imshow(frame, aspect='auto')
+                for part, color in zip(bodyparts, colors):
+                    ax.scatter(data[part]['x'][peak - 250 + i], data[part]['y'][peak - 250 + i], s=50,
+                               c=color.reshape(1,-1), label=part,
+                               marker='o' if data[part]['likelihood'][peak - 250 + i] > 0.6 else 'x')
+                ax.set_xlim(0, frame.shape[1])
+                ax.set_ylim(frame.shape[0], 0)
+                ax = plt.Axes(fig, [0., 0., 1., 1.])
+                ax.set_axis_off()
+                fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
+                fig.legend(fontsize="x-small")
+                fig.savefig(os.path.join(save_path, 'temp', f'labelled_frame_{i}.jpeg'))
+                fig.clear()
+                im_stack += [np.asarray(
+                    Image.open(os.path.join(save_path, 'temp', f'labelled_frame_{i}.jpeg').replace("\\", "/")))]
+                os.remove(os.path.join(save_path, 'temp', f'labelled_frame_{i}.jpeg').replace("\\", "/"))
+
+            print(f"Obtained labelled image stack, len before = {len(im_stack)}, len after stack {np.stack(im_stack, axis=0).shape}")
+            im_stack = np.stack(im_stack, axis=0)
+            print("Writting video, next")
+            tifffile.imwrite(os.path.join(save_path, f"{vid.split('/')[-2]}_{part}_video_frame_{peak-250}-{peak+250}.tif"), im_stack)
+
     return 0
 
 
