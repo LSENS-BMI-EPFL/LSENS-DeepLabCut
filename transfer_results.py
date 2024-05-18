@@ -12,6 +12,7 @@ def transfer_results():
     with open(json_path, "r") as f:
         json_config = json.load(f)
 
+    view = json_name.split("_")[0]
     result_folder = f"/scratch/izar/{user}/dlc_results"
     dest_folder = f"/home/{user}/servers"
     vid_folder = f"/scratch/izar/{user}/videos_to_anly"
@@ -20,14 +21,14 @@ def transfer_results():
         vid_name = vid.split("/")[-1]
 
         if os.path.exists(os.path.join(vid_folder, vid_name)):
-            os.remove(os.path.join(vid_folder, vid_name))
+           os.remove(os.path.join(vid_folder, vid_name))
 
         for item in os.listdir(os.path.join(result_folder, vid_name[:-4])):
-            print(f"Copying data from: {os.path.join(result_folder, vid_name[:-4], item)} to: {os.path.join(dest_folder, result)}")
-            if not os.path.exists(os.path.join(dest_folder, result)):
-                os.makedirs(os.path.join(dest_folder, result))
+            print(f"Copying data from: {os.path.join(result_folder, vid_name[:-4], item)} to: {os.path.join(dest_folder, result, view)}")
+            if not os.path.exists(os.path.join(dest_folder, result, view)):
+                os.makedirs(os.path.join(dest_folder, result, view))
 
-            shutil.copyfile(os.path.join(result_folder, vid_name[:-4], item), os.path.join(dest_folder, result, item))
+            shutil.copyfile(os.path.join(result_folder, vid_name[:-4], item), os.path.join(dest_folder, result, view, item))
         
     return
 

@@ -10,6 +10,6 @@
 module load gcc python openmpi py-tensorflow
 source /home/${USER}/venvs/DLC/bin/activate
 cd /home/${USER}/LSENS-DeepLabCut
-config_path = /scratch/izar/bechvila/context_dlc_sideview-PB-2024-02-21/config.yaml
+config_path = /scratch/izar/bechvila/context_dlc_topview-PB-2024-02-21/config.yaml
 echo "Training network in $config_path"
 python train_DLC_network.py config_path

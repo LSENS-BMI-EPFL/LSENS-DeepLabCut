@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime
-def make_json_for_dlc(experimenter, camera_view, sessions_to_anly: list):
+def make_json_for_dlc(experimenter, camera_view, sessions_to_anly: list, save_name):
     """Script to generate a json config file that would serve to run batch videos for DLC
     Arguments:
         experimenter : as in analysis folder
@@ -31,16 +31,15 @@ def make_json_for_dlc(experimenter, camera_view, sessions_to_anly: list):
         "videos_to_anly": path_list,
         "server_dest_folder": analysis_dir_list
     }
-    today = datetime.today().strftime('%Y%m%d_%H%M%S')
-    with open(fr"./json_files/{camera_view}_dlc_config_{today}.json", "w", encoding='utf-8') as f:
+    with open(fr"./json_files/{save_name}.json", "w", encoding='utf-8') as f:
         json.dump(to_json, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
 
-    filter_by_date = False
+    filter_by_date = True
     # mouse_id = ["RD039", "RD040", "RD041", "RD042", "RD043", "RD044", "RD045"]
-    date_to_anly = ["20240210", "20240212"]
-    mouse_id = ['PB173', 'PB174', 'PB175']
+    date_to_anly = ["20240503"]
+    mouse_id = ['PB176', 'PB177', 'PB178']
     # date_to_anly = ["20240220", "20240222"]
     if filter_by_date == True and date_to_anly is None:
         ValueError("Introduce a valid date or set filter to False")
@@ -48,6 +47,8 @@ if __name__ == "__main__":
     camera_view = 'sideview'
     experimenter = "Pol_Bech"
 
+    today = datetime.today().strftime('%Y%m%d_%H%M%S')
+    save_name = f"{camera_view}_dlc_config_{[date_to_anly if filter_by_date else today]}"
     sessions_to_anly = []
 
     for mouse in mouse_id:
@@ -62,4 +63,5 @@ if __name__ == "__main__":
 
     make_json_for_dlc(experimenter=experimenter,
                       camera_view=camera_view,
-                      sessions_to_anly=sessions_to_anly)
+                      sessions_to_anly=sessions_to_anly,
+                      save_name=save_name)

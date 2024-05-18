@@ -23,7 +23,7 @@ def run_dlc_anly():
 		return 1
 
 	start = timeit.default_timer()
-	dlc.analyze_videos(config_path, [video_path], videotype="avi", save_as_csv=True, destfolder=dest_path)
+	dlc.analyze_videos(config_path, [video_path], videotype=".avi", save_as_csv=True, destfolder=dest_path)
 	end = timeit.default_timer()
 	print(f"DLC ran without issues in {round((end-start)/60, 2)} min")
 
