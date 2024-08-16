@@ -11,23 +11,38 @@ a.	Create server folder -> type: mkdir servers
 b.	Type: vim .bashrc
 c.	Press i to be able to edit
 d.	In the last line copy paste (paste in command line is done by right clicking):
+```
 gio mount smb://intranet\;<gaspar_id> @sv-nas1.rcp.epfl.ch/Petersen-lab
 ln -s  /run/user/$(id -u)/gvfs/smb-share\:domain\=intranet\,server\=sv-nas1.rcp.epfl.ch\,share\=petersen-lab\,user\=<gaspar_id>/* ~/servers
+```
 e.	Press ESC and then type “:wq” to save and quit (you can use just “:q” to quit without saving)
-4.	Load necessary modules: 
-a.	Type: module load gcc python openmpi py-tensorflow
-5.	Create virtual environment:
-a.	Type: mkdir venvs
-b.	Type: virtualenv --system-site-packages venvs/DLC
-6.	Activate DLC virtualenv and install deeplabcut:
-a.	Type: source venvs/DLC/bin/activate
-b.	python -m pip install --no-cache-dir deeplabcut==2.3.9
-c.	python -m pip install --no-cache-dir typing-extensions==4.6
-d.	python -m pip install --no-cache-dir keras==2.10
-7.	Test DLC installation
+5.	Load necessary modules: 
+a.	Type: 
+```
+module load gcc python openmpi py-tensorflow
+```
+6.	Create virtual environment:
+a.	Type:
+```
+mkdir venvs
+```
+b.	Type: 
+```
+virtualenv --system-site-packages venvs/DLC
+```
+8.	Activate DLC virtualenv and install deeplabcut:
+a.	Type:
+```
+source venvs/DLC/bin/activate
+python -m pip install --no-cache-dir deeplabcut==2.3.9
+python -m pip install --no-cache-dir typing-extensions==4.6
+python -m pip install --no-cache-dir keras==2.10
+```
+
+9.	Test DLC installation
 a.	Python
 b.	Import deeplabcut
-8.	Set up file transfer: 
+10.	Set up file transfer: 
 a.	Install WinSCP in your local computer
 b.	Create folder in your /home/<gaspar_id> directory for the files you want to run: you will need a folder with your code (i.e this repo), and a logs folder.
 c.  Create folder in your /scratch/izar/<gaspar_id> directory for the videos (videos_to_anly) and for the results (dlc_results). Copy your network on the scratch folder too.
