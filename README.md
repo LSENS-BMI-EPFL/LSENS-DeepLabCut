@@ -1,37 +1,46 @@
 # LSENS-DeepLabCut
-LSENS repository for deeplabcut models and preprocessing scripts
-Get access: Talk to Carl
+LSENS repository for deeplabcut model training in SCITAS clusters and preprocessing scripts
+Get SCITAS access: Talk to Carl
 Set up cluster:
-1.	Open Anaconda Prompt. Type: ssh <gaspar id>@<cluster>.epfl.ch
-  a.	Cluster can be izar, jed, or helvetios for scitas clusters
-  b.	You’ll be prompted to type your password
-  2.	You will be dropped in your /home folder. This is to have “permanent” files with info or .sbatch files for running your routines.
-3.	Mount LSENS server:
-  a.	Create server folder -> type:
+1.	Open Anaconda Prompt. Type: `ssh <gaspar id>@<cluster>.epfl.ch`
+- Cluster can be izar, jed, or helvetios for scitas clusters
+- You’ll be prompted to type your gaspar password
+- You will be dropped in your /home folder. This is to have “permanent” files with info or .sbatch files for running your routines.
+2.	Mount LSENS server:
+
+Create servers folder -> type: 
 ```
 mkdir servers
+```
+Open bashrc file: 
+```
 vim .bashrc
 ```
-  c.	Press i to be able to edit
-  d.	In the last line copy paste (paste in command line is done by right clicking):
+Press _i_ to be able to edit bashrc file
+In the last line of the bashrc file copy paste (paste in command line is done by right clicking):
+
 ```
 gio mount smb://intranet\;<gaspar_id> @sv-nas1.rcp.epfl.ch/Petersen-lab
 ln -s  /run/user/$(id -u)/gvfs/smb-share\:domain\=intranet\,server\=sv-nas1.rcp.epfl.ch\,share\=petersen-lab\,user\=<gaspar_id>/* ~/servers
 ```
-  e.	Press ESC and then type “:wq” to save and quit (you can use just “:q” to quit without saving)
-5.	Load necessary modules: 
-  a.	Type: 
+
+and replace `<gaspar_id>` appropriately.
+
+Press ESC and then type “:wq” to save and quit (you can use just “:q” to quit without saving)
+
+3.	Load necessary modules: 
+Type: 
 ```
 module load gcc python openmpi py-tensorflow
 ```
-6.	Create virtual environment:
-  a.	Type:
+4.	Create virtual environment:
+Type:
 ```
 mkdir venvs
 virtualenv --system-site-packages venvs/DLC
 ```
-8.	Activate DLC virtualenv and install deeplabcut:
-  a.	Type:
+5.	Activate DLC virtualenv and install deeplabcut:
+Type:
 ```
 source venvs/DLC/bin/activate
 python -m pip install --no-cache-dir deeplabcut==2.3.9
@@ -39,12 +48,13 @@ python -m pip install --no-cache-dir typing-extensions==4.6
 python -m pip install --no-cache-dir keras==2.10
 ```
 
-9.	Test DLC installation
-  a.	In command line open python: type: Python
+6.	Test DLC installation
+  a.	In command line open python: type: `python`, then
 ```
 import deeplabcut
 ```
-10.	Set up file transfer: 
+
+7.	Set up file transfer: 
 a.	Install WinSCP in your local computer
 b.	Create folder in your /home/<gaspar_id> directory for the files you want to run: you will need a folder with your code (i.e this repo), and a logs folder.
 c.  Create folder in your /scratch/izar/<gaspar_id> directory for the videos (videos_to_anly) and for the results (dlc_results). Copy your network on the scratch folder too.
