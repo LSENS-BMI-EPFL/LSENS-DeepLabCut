@@ -89,3 +89,10 @@ python /home/$(whoami)/LSENS-DeepLabCut/transfer_results.py $(whoami) <name of j
 ```
 
 Enjoy and may the pose estimation gods be with you!
+
+
+
+#### Troubleshooting tips
+- When installing DLC in your virtual env, you get the following error: `TypeError: canonicalize_version() got an unexpected keyword argument 'strip_trailing_zero'` This means you have to either downgrade or upgrade the `packaging` module e.g. >22.0 or higher.
+
+
