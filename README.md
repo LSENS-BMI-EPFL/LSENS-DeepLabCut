@@ -20,7 +20,7 @@ Press _i_ to be able to edit bashrc file
 In the last line of the bashrc file copy paste (paste in command line is done by right clicking):
 
 ```
-gio mount smb://intranet\;<gaspar_id> @sv-nas1.rcp.epfl.ch/Petersen-lab
+gio mount smb://intranet\;<gaspar_id>@sv-nas1.rcp.epfl.ch/Petersen-lab
 ln -s  /run/user/$(id -u)/gvfs/smb-share\:domain\=intranet\,server\=sv-nas1.rcp.epfl.ch\,share\=petersen-lab\,user\=<gaspar_id>/* ~/servers
 ```
 
