@@ -3,7 +3,7 @@ LSENS repository for deeplabcut model training in SCITAS clusters and preprocess
 Get SCITAS access: Talk to Carl
 Set up cluster:
 1.	Open Anaconda Prompt. Type: `ssh <gaspar id>@<cluster>.hpc.epfl.ch`
-- Cluster can be izar, jed, or helvetios for scitas clusters
+- Cluster has to be Kuma for DLC, as it is the only one with GPUs
 - You’ll be prompted to type your gaspar password
 - You will be dropped in your /home folder. This is to have “permanent” files with info or .sbatch files for running your routines.
 2.	Mount LSENS server:
