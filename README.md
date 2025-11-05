@@ -40,12 +40,17 @@ mkdir venvs
 virtualenv --system-site-packages venvs/DLC
 ```
 5.	Activate DLC virtualenv and install deeplabcut:
+From kuma_environment.txt:
+```
+pip install -r kuma_environment.txt
+```
+
 Type:
 ```
 source venvs/DLC/bin/activate
-python -m pip install --no-cache-dir deeplabcut==2.3.9
-python -m pip install --no-cache-dir typing-extensions==4.6
-python -m pip install --no-cache-dir keras==2.10
+python -m pip install --no-cache-dir deeplabcut==3.0.0rc6
+python -m pip install --no-cache-dir typing-extensions==4.12.2
+python -m pip install --no-cache-dir keras==
 ```
 
 6.	Test DLC installation
