@@ -2,7 +2,7 @@
 LSENS repository for deeplabcut model training in SCITAS clusters and preprocessing scripts
 Get SCITAS access: Talk to Carl
 Set up cluster:
-1.	Open Anaconda Prompt. Type: `ssh <gaspar id>@<cluster>.epfl.ch`
+1.	Open Anaconda Prompt. Type: `ssh <gaspar id>@<cluster>.hpc.epfl.ch`
 - Cluster can be izar, jed, or helvetios for scitas clusters
 - You’ll be prompted to type your gaspar password
 - You will be dropped in your /home folder. This is to have “permanent” files with info or .sbatch files for running your routines.
