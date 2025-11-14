@@ -56,7 +56,6 @@ Type:
 source venvs/DLC/bin/activate
 python -m pip install --no-cache-dir deeplabcut==3.0.0rc6
 python -m pip install --no-cache-dir typing-extensions==4.12.2
-python -m pip install --no-cache-dir keras==
 ```
 
 6.	Test DLC installation
