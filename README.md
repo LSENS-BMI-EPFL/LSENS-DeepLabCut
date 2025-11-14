@@ -31,7 +31,7 @@ Press ESC and then type “:wq” to save and quit (you can use just “:q” to
 3.	Load necessary modules: 
 Type: 
 ```
-module load gcc python openmpi py-tensorflow
+module load gcc openmpi py-tensorflow
 ```
 4.	Create virtual environment:
 Type:
@@ -43,6 +43,12 @@ virtualenv --system-site-packages venvs/DLC
 From kuma_environment.txt:
 ```
 pip install -r kuma_environment.txt
+```
+
+Check python version == 3.11
+Type:
+```
+python -V
 ```
 
 Type:
