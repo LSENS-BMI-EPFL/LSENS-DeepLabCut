@@ -37,7 +37,7 @@ module load gcc openmpi py-tensorflow
 Type:
 ```
 mkdir venvs
-virtualenv --system-site-packages venvs/DLC
+python -m venv ./venvs/DLC
 ```
 5.	Activate DLC virtualenv and install deeplabcut:
 From kuma_environment.txt:
