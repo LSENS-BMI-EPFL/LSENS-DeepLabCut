@@ -67,7 +67,7 @@ import deeplabcut
 7.	Set up file transfer: 
 a.	Install WinSCP in your local computer
 b.	Create folder in your /home/<gaspar_id> directory for the files you want to run: you will need a folder with your code (i.e this repo), and a logs folder.
-c.  Create folder in your /scratch/izar/<gaspar_id> directory for the videos (videos_to_anly) and for the results (dlc_results). Copy your network on the scratch folder too.
+c.  Create folder in your /scratch/<gaspar_id> directory for the videos (videos_to_anly) and for the results (dlc_results). Copy your network on the scratch folder too.
 
 To train your network:
 1. Create and label your project in your local computer (no gpu needed but make sure the deeplabcut version is the same).
@@ -76,7 +76,7 @@ To train your network:
 ```
 source venvs/DLC/bin/activate
 ```
-  a. Open a python instance typing python and import deeplabcut. Pointing the network to your config path (somehting like /scratch/izar/<gaspar_id>/<yournetworkname>/config.yaml), create training dataset: dlc.create_training_dataset(config_path). This is important to do  already on the cluster since otherwise you will have path issues. Close python.
+  a. Open a python instance typing python and import deeplabcut. Pointing the network to your config path (somehting like /scratch/<gaspar_id>/<yournetworkname>/config.yaml), create training dataset: dlc.create_training_dataset(config_path). This is important to do  already on the cluster since otherwise you will have path issues. Close python.
   b. Edit the train.sbatch file in the repo with the path to your network config.yaml file. You can type in terminal: vim /home/<gaspar_id>/LSENS-DeepLabCut/train.sbatch, press "i" to insert and change the name of the job, the max time of the job (12 h should be more     than enough) and the email so you receive notifications if your code finishes or crashes. Exit vim by pressing ESC, typing :wq to save or :q! to not save 
   c. Run your training by typing in terminal:
 ```
