@@ -1,0 +1,100 @@
+absl-py @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-absl-py-1.2.0-tclje3zjemd47sjx536er3zdv3xlpii3/spack-src
+asttokens==2.4.1
+astunparse @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-astunparse-1.6.3-ulisvek46u72xfghdij6kwsrknjgvmkc/spack-src
+backports.entry-points-selectable @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-backports-entry-points-selectable-1.1.1-k6kp3kgv5yexxpdcl3sbfoxdwnwcxrds/spack-src
+blosc2==2.6.1
+certifi @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-certifi-2021.10.8-d3het4m7suvzssdrivzmdz4i6wpgjfz3/spack-src
+charset-normalizer @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-charset-normalizer-2.0.12-kgsquabgjeckmx4vpt3sulucddir2nik/spack-src
+cycler @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-cycler-0.11.0-gy5pnerzry55cw77zc3qwikte3coi6us/spack-src
+Cython @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-cython-0.29.30-jq4f562iu6wmvygwbwgklyihzxb2tgdw/spack-src
+decorator==5.1.1
+deeplabcut==2.3.9
+distlib @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-distlib-0.3.4-brcylspnnh4mfv3jb4tql5lmzppl3dif/spack-src
+dlclibrary==0.0.6
+exceptiongroup==1.2.0
+executing==2.0.1
+filelock @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-filelock-3.5.0-yu74mwoz2gnixb5g76wpagqe435tz35n/spack-src
+filterpy==1.4.5
+fonttools==4.50.0
+fsspec==2024.3.1
+gast @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-gast-0.5.3-5pcfhphdgmbataldmgbdf4jeg4ioivfn/spack-src
+google-pasta @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-google-pasta-0.2.0-jpnvvxcr65vxmmqjuyvevn6ls4ltsur4/spack-src
+huggingface-hub==0.22.2
+idna @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-idna-3.3-qbqrjwtcnvnzxkhfe42xyakqc63226qm/spack-src
+imageio==2.34.0
+imageio-ffmpeg==0.4.9
+imgaug==0.4.0
+jedi==0.19.1
+joblib==1.3.2
+keras==2.10.0
+Keras-Preprocessing @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-keras-preprocessing-1.1.2-ii6livelvujx5yowqtqhfhhzwgdypaau/spack-src
+kiwisolver @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-kiwisolver-1.3.2-cgj53v3shxxi4c4mndigeipkhsyx3l4c/spack-src
+lazy_loader==0.3
+llvmlite==0.42.0
+markdown-it-py==3.0.0
+matplotlib @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-matplotlib-3.5.2-thk6fsqtp35ngoovofzhfqlgorpvvgmq/spack-src
+matplotlib-inline==0.1.6
+mdurl==0.1.2
+ml-dtypes==0.4.0
+mpmath @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-mpmath-1.2.1-h24ymvv677wjbbpsx6ls4rrkfpgnxiec/spack-src
+msgpack==1.0.8
+msgpack-numpy==0.4.8
+namex==0.0.7
+ndindex==1.8
+networkx==3.2.1
+numba==0.59.1
+numexpr==2.10.0
+numpy @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-numpy-1.22.4-mnrcvckkdamqs23qfkdnrjs4rqexem5u/spack-src
+opencv-python==4.9.0.80
+opt-einsum @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-opt-einsum-3.3.0-ursmajvomvrxvtplprnyeg7vmfctgfge/spack-src
+optree==0.11.0
+packaging @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-packaging-21.3-owurk6h2jndweqgngynrd5pdkry3uezo/spack-src
+pandas @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-pandas-1.4.2-6guwp5w5obg5uhpqp44uuylmtspnegfy/spack-src
+parso==0.8.3
+patsy==0.5.6
+pexpect==4.9.0
+pillow==10.3.0
+platformdirs @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-platformdirs-2.4.0-3dg66g2lhyk76kegaiqu5ea7cwgrtnl3/spack-src
+ply @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-ply-3.11-tysw5mmwk2scesthzhr2gvmf3yesokg3/spack-src
+prompt-toolkit==3.0.43
+protobuf @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-protobuf-3.20.0-k24mrqsy5gkgohfpzqexyw6g72vceo2t/spack-src
+psutil==5.9.8
+ptyprocess==0.7.0
+pure-eval==0.2.2
+py-cpuinfo==9.0.0
+Pygments==2.17.2
+pyparsing @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-pyparsing-3.0.6-a4e4s5whtjvrbezg3llbzdbu74k6etcr/spack-src
+python-dateutil @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-python-dateutil-2.8.2-ojrwq3ilvtg5cn6i7clcsdivkp74gese/spack-src
+pytz @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-pytz-2021.3-hbwegowbu4r6d3xtvwdfdzt4gvdqhrto/spack-src
+PyYAML==6.0.1
+pyzmq==25.1.2
+requests @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-requests-2.26.0-5vg6jfblh4sm774zrnb4g47wn2pgnl4u/spack-src
+rich==13.7.1
+ruamel.yaml==0.18.6
+ruamel.yaml.clib==0.2.8
+scikit-image==0.22.0
+scikit-learn==1.4.1.post1
+scipy==1.13.0
+semver @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-semver-2.8.1-m6lw6jqc3dixn4gnfxpywvx5sjrzn4mq/spack-src
+shapely==2.0.3
+six @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-six-1.16.0-vudlda3qpfdxpnellfzedlmke56hphdx/spack-src
+sphire @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-eman2-2.91-uy2mbdqkfued4yjb5fb4qfgvhd3f2i4s/spack-src/sphire
+stack-data==0.6.3
+statsmodels==0.14.1
+sympy @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-sympy-1.8-cwoxoqbvkf44i6fe7z774skiwbwbmhgk/spack-src
+tables==3.9.2
+tabulate==0.9.0
+tensorpack==0.11
+termcolor @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-termcolor-1.1.0-crxlulkg6rqppbswoufcweloc6jntmf2/spack-src
+tf-slim==1.1.0
+threadpoolctl==3.4.0
+tifffile==2024.2.12
+torch==1.12.0
+tqdm==4.66.2
+traitlets==5.14.2
+typing_extensions==4.6.0
+urllib3 @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-urllib3-1.26.6-g5jzvih5aq5bjh524cpwjhghprlu2byt/spack-src
+virtualenv @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-virtualenv-20.10.0-ixuaxlmnzuj5d3h5hnx3owiitcddd67h/spack-src
+wcwidth==0.2.13
+wrapt @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-wrapt-1.13.3-q5mixgn42asnecftwmkc6ruxjlzbrz3x/spack-src
+xarray @ file:///tmp/scitasbuild/syrah.v1/tmp/spack-stage-py-xarray-2022.3.0-4qfvovf2xiuu2v5djqag4ku2hl62mvij/spack-src
